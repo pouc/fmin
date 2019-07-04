@@ -21,7 +21,7 @@
   },
   "scripts": {
     "pretest": "rm -rf build && mkdir build && json2module package.json > build/package.js && rollup -c",
-    "test": "jshint src/*.js src/visualizations/*.js && tape 'test/**/*-test.js'",
+    "test": "jshint src && tape 'test/**/*-test.js'",
     "prepare": "npm run test && uglifyjs build/fmin.js -c -m -o build/fmin.min.js",
     "postpublish": "zip -j build/fmin.zip -- LICENSE README.md build/fmin.js build/fmin.min.js"
   },
